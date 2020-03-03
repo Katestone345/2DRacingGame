@@ -26,12 +26,12 @@ public class Player : MonoBehaviour
         if (tiltValue < 0)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = player_left;
-            transform.Translate(Vector3.left * 4.0f * Time.deltaTime);
+            transform.Translate(Vector3.left * 20.0f * Time.deltaTime);
         }
         if (tiltValue > 0)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = player_right;
-            transform.Translate(Vector3.right * 4.0f * Time.deltaTime);
+            transform.Translate(Vector3.right * 20.0f * Time.deltaTime);
         }
         if(tiltValue == 0)
         {
@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
     float GetTiltValue()
     {
         float TILT_MIN = 0.05f;
-        float TILT_MAX = 0.2f;
+        float TILT_MAX = 0.2f; 
 
         // Work out magnitude of tilt
         float tilt = Mathf.Abs(Input.acceleration.x);
@@ -56,11 +56,11 @@ public class Player : MonoBehaviour
         
         if (Input.acceleration.x < 0)
         {
-            return -tiltScale;
+            return tiltScale;
         }
         else
         {
-            return tiltScale;
+            return -tiltScale;
         }
     }
 
