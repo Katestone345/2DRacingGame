@@ -26,12 +26,12 @@ public class Player : MonoBehaviour
         if (tiltValue < 0)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = player_left;
-            transform.Translate(Vector3.left * 20.0f * Time.deltaTime);
+            transform.Translate(Vector3.left * 30.0f * Time.deltaTime);
         }
         if (tiltValue > 0)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = player_right;
-            transform.Translate(Vector3.right * 20.0f * Time.deltaTime);
+            transform.Translate(Vector3.right * 30.0f * Time.deltaTime);
         }
         if(tiltValue == 0)
         {

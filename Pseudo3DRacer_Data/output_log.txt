@@ -2,29 +2,33 @@ Initialize engine version: 5.6.2f1 (a2913c821e27)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Intel(R) HD Graphics 520 (ID=0x1916)
-    Vendor:   Intel
-    VRAM:     2111 MB
-    Driver:   26.20.100.6913
+    Renderer: AMD Radeon RX 5700 (ID=0x731f)
+    Vendor:   ATI
+    VRAM:     3072 MB
+    Driver:   26.20.13001.40003
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\p0c0c\Desktop\Pseudo3DRacer_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\p0c0c\Desktop\Pseudo3DRacer_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\p0c0c\Desktop\Pseudo3DRacer_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\p0c0c\Desktop\Pseudo3DRacer_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\p0c0c\Desktop\Pseudo3DRacer_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\p0c0c\Desktop\Pseudo3DRacer_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\p0c0c\Desktop\Pseudo3DRacer_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\p0c0c\Desktop\Pseudo3DRacer_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\p0c0c\Desktop\Pseudo3DRacer_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading C:\Users\p0c0c\Desktop\Pseudo3DRacer_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.046 seconds
-Platform assembly: C:\Users\p0c0c\Desktop\Pseudo3DRacer_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\p0c0c\Desktop\Pseudo3DRacer_Data\Managed\System.dll (this message is harmless)
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+Platform assembly: C:\Users\kates\OneDrive\Desktop\RaceGame\2DRacingGame\Pseudo3DRacer_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\kates\OneDrive\Desktop\RaceGame\2DRacingGame\Pseudo3DRacer_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\kates\OneDrive\Desktop\RaceGame\2DRacingGame\Pseudo3DRacer_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\kates\OneDrive\Desktop\RaceGame\2DRacingGame\Pseudo3DRacer_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\kates\OneDrive\Desktop\RaceGame\2DRacingGame\Pseudo3DRacer_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\kates\OneDrive\Desktop\RaceGame\2DRacingGame\Pseudo3DRacer_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\kates\OneDrive\Desktop\RaceGame\2DRacingGame\Pseudo3DRacer_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\kates\OneDrive\Desktop\RaceGame\2DRacingGame\Pseudo3DRacer_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\kates\OneDrive\Desktop\RaceGame\2DRacingGame\Pseudo3DRacer_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\kates\OneDrive\Desktop\RaceGame\2DRacingGame\Pseudo3DRacer_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.169 seconds
+Platform assembly: C:\Users\kates\OneDrive\Desktop\RaceGame\2DRacingGame\Pseudo3DRacer_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\kates\OneDrive\Desktop\RaceGame\2DRacingGame\Pseudo3DRacer_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 5760x1188 at -1920,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 9.073100 ms
-Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3378 -> priority: 1 
-  Thread -> id: 2b28 -> priority: 1 
+UnloadTime: 1.082400 ms
+Setting up 6 worker threads for Enlighten.
+  Thread -> id: 4af4 -> priority: 1 
+  Thread -> id: 63c -> priority: 1 
+  Thread -> id: 4dec -> priority: 1 
+  Thread -> id: 1a18 -> priority: 1 
+  Thread -> id: 2e48 -> priority: 1 
+  Thread -> id: 5bc -> priority: 1 
