@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 [System.Serializable]
 // This creates a way to enter the amount of stretches of track you want
@@ -38,7 +41,8 @@ public class Background : MonoBehaviour
 	
 	private float CarPosition = 0.0f;
 	private float trackDistance = 0.0f;
-    private float fSpeed = 1f;
+    private float fSpeed = 0.0f;
+    public bool isPressed = false;
 
     private float fCurvatrue = 0.0f;  
 	private float fTrackCurvature = 0.0f;
@@ -170,8 +174,19 @@ public class Background : MonoBehaviour
 			}
 		}
 	}
+
+    public void OnPointerDownButton()
+    {
+        isPressed = true;
+    }
+
 	void Update ()
     {
+        if (isPressed)
+        {
+            fSpeed += 1.0f * Time.deltaTime;
+        }
+
         // This makes the scene move
         trackDistance += (300f * fSpeed) * Time.deltaTime;
 
