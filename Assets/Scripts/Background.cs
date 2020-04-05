@@ -26,6 +26,7 @@ public class Background : MonoBehaviour
     public Transform Car;
 	private Vector3 camToCarOffset;
 
+
 	//Background
 	public int screenWeidth = 160, screenHeight = 100;
 	public SpriteRenderer pixelPerf;                                            // To make the pixels show up clearly
@@ -76,8 +77,7 @@ public class Background : MonoBehaviour
 		roadHolder.name = "road";
 		whiteLineHolder = new GameObject();
 		whiteLineHolder.name = "Lines";
-		
-
+        
 		for (int y = 0; y < screenHeight; y++)
         {
 			for (int x = -100; x < screenWeidth + 100; x++)
@@ -180,7 +180,7 @@ public class Background : MonoBehaviour
         isPressed = true;
     }
 
-	void Update ()
+	void FixedUpdate ()
     {
         if (isPressed)
         {

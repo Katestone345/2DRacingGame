@@ -246,3 +246,5 @@ C:\Users\kates\OneDrive\Desktop\RaceGame\2DRacingGame\obj\Debug\Assembly-CSharp.
 C:\Users\kates\OneDrive\Desktop\RaceGame\2DRacingGame\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\kates\OneDrive\Desktop\RaceGame\2DRacingGame\obj\Debug\Assembly-CSharp.dll
 C:\Users\kates\OneDrive\Desktop\RaceGame\2DRacingGame\obj\Debug\Assembly-CSharp.pdb
+C:\Users\kates\OneDrive\Desktop\RaceGame\Enemies\2DRacingGame\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\kates\OneDrive\Desktop\RaceGame\Enemies\2DRacingGame\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
