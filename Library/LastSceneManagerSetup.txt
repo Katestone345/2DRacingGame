@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/GameOver.unity
-=======
-- path: Assets/Scenes/MainMenu.unity
->>>>>>> parent of fa027ac... Revert "Volsliders"
   isLoaded: 1
   isActive: 1
