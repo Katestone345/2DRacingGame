@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
+using UnityEngine.Audio
 public class VolSlider : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public void setVol( float vol) {
-        audioMixer.SetFloat("volume",vol);
+        audioMixer.setFloat("volume",vol);
     }
 }
