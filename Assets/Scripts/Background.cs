@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using System.Collections;
 
 [System.Serializable]
 // This creates a way to enter the amount of stretches of track you want
@@ -38,8 +39,14 @@ public class Background : MonoBehaviour
 	private List<Vector2> defaultRoadShouder = new List<Vector2>();
 	private List<Vector2> defaultWhiteLine = new List<Vector2>();
 	private List<Vector2> defaultGrass = new List<Vector2>();
-	
-	private float CarPosition = 0.0f;
+
+    public Text timerText;
+    public float timer;
+    private float seconds;
+    private int minutes;
+    
+
+    private float CarPosition = 0.0f;
 	private float trackDistance = 0.0f;
     private float fSpeed = 0.0f;
     public bool accelPressed;
@@ -172,8 +179,14 @@ public class Background : MonoBehaviour
 				}
 			}
 		}
-	}
+    }
 
+    public void UpdateTimerUI()
+    {
+        //set timer UI
+        seconds += Time.deltaTime * 2.0f;
+        timerText.text = "Timer:" + (int)seconds;
+    }
 
     public void accel(bool pressed)
     {
@@ -183,11 +196,12 @@ public class Background : MonoBehaviour
     {
         brakePressed = pressed;
     }
-
     public bool topSpeed = false;
 
     void FixedUpdate ()
     {
+        UpdateTimerUI();
+
         if (accelPressed)
         {
             fSpeed += 2.0f * Time.deltaTime;
