@@ -40,10 +40,9 @@ public class Background : MonoBehaviour
 	private List<Vector2> defaultWhiteLine = new List<Vector2>();
 	private List<Vector2> defaultGrass = new List<Vector2>();
 
-    public Text timerText;
-    public float timer;
+    public Text timerText, startText;
     private float seconds;
-    private int minutes;
+    private int start = 3;
     
 
     private float CarPosition = 0.0f;
@@ -179,6 +178,7 @@ public class Background : MonoBehaviour
 				}
 			}
 		}
+        StartCoroutine(StartCountDown());
     }
 
     public void UpdateTimerUI()
@@ -186,6 +186,19 @@ public class Background : MonoBehaviour
         //set timer UI
         seconds += Time.deltaTime * 2.0f;
         timerText.text = "Timer:" + (int)seconds;
+    }
+
+    IEnumerator StartCountDown()
+    {
+        while (start > 0)
+        {
+            startText.text = start.ToString();
+            yield return new WaitForSeconds(0.5f);
+            start --;
+        }
+        startText.text = "GO!";
+        yield return new WaitForSeconds(1f);
+        startText.gameObject.SetActive(false);
     }
 
     public void accel(bool pressed)
@@ -200,9 +213,12 @@ public class Background : MonoBehaviour
 
     void FixedUpdate ()
     {
-        UpdateTimerUI();
+        if(start < 1)
+        {
+            UpdateTimerUI();
+        }
 
-        if (accelPressed)
+        if (start < 1 && accelPressed)
         {
             fSpeed += 2.0f * Time.deltaTime;
             //fSpeed += topSpeed ? 0.1f * Time.deltaTime : 2.0f * Time.deltaTime;
