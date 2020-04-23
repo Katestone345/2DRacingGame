@@ -22,13 +22,12 @@ public struct VecTrack
 
 public class Background : MonoBehaviour
 {
-
     public Transform Car;
 	private Vector3 camToCarOffset;
 
-
-	//Background
-	public int screenWeidth = 160, screenHeight = 100;
+    //Background
+    public Transform background;
+    public int screenWeidth = 160, screenHeight = 100;
 	public SpriteRenderer pixelPerf;                                            // To make the pixels show up clearly
 	public Color grassColor, shouderColor, shouderLowColor, roadColor, 
         roadLowColor, grassLowColor, whitLineColor;                             // Color variables
@@ -43,11 +42,11 @@ public class Background : MonoBehaviour
 	private float CarPosition = 0.0f;
 	private float trackDistance = 0.0f;
     private float fSpeed = 0.0f;
-    public bool isPressed = false;
+    public bool accelPressed;
+    public bool brakePressed = false;
 
     private float fCurvatrue = 0.0f;  
 	private float fTrackCurvature = 0.0f;
-	private float fPlayerCurvature = 0.0f;
 
 	[Header("Fill in colors and variables: ")]
 	public List <VecTrack> vecTrack = new List<VecTrack>();  
@@ -175,16 +174,41 @@ public class Background : MonoBehaviour
 		}
 	}
 
-    public void OnPointerDownButton()
+
+    public void accel(bool pressed)
     {
-        isPressed = true;
+        accelPressed = pressed;
+    }
+    public void brake(bool pressed)
+    {
+        brakePressed = pressed;
     }
 
-	void FixedUpdate ()
+    public bool topSpeed = false;
+
+    void FixedUpdate ()
     {
-        if (isPressed)
+        if (accelPressed)
         {
-            fSpeed += 1.0f * Time.deltaTime;
+            fSpeed += 2.0f * Time.deltaTime;
+            //fSpeed += topSpeed ? 0.1f * Time.deltaTime : 2.0f * Time.deltaTime;
+        } else
+        {
+            fSpeed -= 2.0f * Time.deltaTime;
+        }
+        if(brakePressed)
+        {
+            fSpeed -= 1.5f * Time.deltaTime;
+        }
+
+        float gearSpeed = topSpeed ? 1.8f : 1.0f;
+        if (fSpeed < 0.0f)
+        {
+            fSpeed = 0.0f;
+        }
+        if (fSpeed > gearSpeed)
+        {
+            fSpeed = Mathf.Lerp(fSpeed, 1.0f, 5 * Time.deltaTime);
         }
 
         // This makes the scene move
@@ -194,14 +218,19 @@ public class Background : MonoBehaviour
         float fOffset = 0;
 		int nTrackSection = 0;
 
-		// Find car position On track
-		while(nTrackSection < vecTrack.Count && fOffset <= trackDistance)
+        // Find car position On track
+        while (nTrackSection < vecTrack.Count && fOffset <= trackDistance)
         {
 			fOffset += vecTrack[nTrackSection].distance;
 			nTrackSection ++;
 		}
 
-		for (int i = 0; i < grassList.Count ; i++)
+        float fTargetCurvature = vecTrack[nTrackSection - 1].curvature;
+        float fTrackCurveDiff = (fTargetCurvature - fCurvatrue) * Time.deltaTime * fSpeed;
+        fCurvatrue += fTrackCurveDiff;
+        fTrackCurvature += (fCurvatrue) * Time.deltaTime * fSpeed;
+
+        for (int i = 0; i < grassList.Count ; i++)
         {
 			float fPerspective = (float)(grassList[i].transform.position.y - screenHeight/2)  / (screenHeight / 2.0f);     // y = nRow - screenHeight/2
 			grassList[i].color = Mathf.Sin (10.0f * Mathf.Pow (1.0f - fPerspective, 3) + trackDistance * 0.1f) < 0.0f ? grassColor : grassLowColor;
@@ -225,6 +254,5 @@ public class Background : MonoBehaviour
 			whiteLineList[i].color = Mathf.Sin(29.0f * Mathf.Pow (1.0f - fPerspective, 3) + trackDistance * 0.1f) < 0.0f ? whitLineColor : roadColor;
 			whiteLineList[i].transform.position = new Vector2(defaultWhiteLine[i].x + (fCurvatrue * Mathf.Pow(1.0f - fPerspective,3)) * screenWeidth, whiteLineList[i].transform.position.y);
 		}
-
-	}
+    }
 }
