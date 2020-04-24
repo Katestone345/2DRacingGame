@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBoundariesca02 : MonoBehaviour
+public class EnemyBoundariescar02 : MonoBehaviour
 {
     private Vector2 screenBounds;
     private float objectWidth;
@@ -20,8 +20,8 @@ public class EnemyBoundariesca02 : MonoBehaviour
     void LateUpdate()
     {
         Vector3 viewPos = transform.position;
-        viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x + objectWidth, 78 - objectWidth);
-        viewPos.y = Mathf.Clamp(viewPos.y, 75 + objectHeight, 100 - objectHeight);
+        viewPos.x = Mathf.Clamp(viewPos.x, 78 + objectWidth, 150 - objectWidth);
+        viewPos.y = Mathf.Clamp(viewPos.y, 78 + objectHeight, 100);
         transform.position = viewPos;
     }
 }
