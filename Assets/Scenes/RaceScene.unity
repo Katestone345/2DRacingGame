@@ -1732,7 +1732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5eeb64315e90184f9fce21da525dbe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 0}
+  timer: {fileID: 1406895243}
   explosionPrefab: {fileID: 21300004, guid: c8260d15cb31d3d49a251f7cdb4d1777, type: 3}
 --- !u!61 &1415788234
 BoxCollider2D:
