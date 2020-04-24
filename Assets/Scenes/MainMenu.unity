@@ -3758,13 +3758,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hold  the  right  button  to  accelerate.
+  m_text: 'Hold  the  right  side  to  accelerate.
 
-    Hold  the  left  button  to  decelerate.
+    Hold  the  left  side  to  decelerate.
 
     Tilt  the  phone  to  move  left  and  right.
 
-    Don''t  let  the  enemy  car  hit  you!'
+    Don''t  let  the  enemy  cars  hit  you!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5cd82c006b02f50479e4fa77c4517a56, type: 2}
   m_sharedMaterial: {fileID: 21381312565235776, guid: 5cd82c006b02f50479e4fa77c4517a56,
@@ -3810,7 +3810,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 42
+  m_firstOverflowCharacterIndex: 40
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -3834,7 +3834,7 @@ MonoBehaviour:
   m_margin: {x: -120.4274, y: 0, z: -166.88348, w: 0}
   m_textInfo:
     textComponent: {fileID: 1295056816}
-    characterCount: 167
+    characterCount: 164
     spriteCount: 0
     spaceCount: 49
     wordCount: 27
